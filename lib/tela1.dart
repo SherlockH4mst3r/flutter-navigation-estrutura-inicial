@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 
+import 'tela2.dart';
+
 class Tela1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.orange,
-        title: Text('Tela 1'),
-      ),
+      appBar: AppBar(backgroundColor: Colors.orange, title: Text('Tela 1')),
       body: Center(
         child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            primary: Colors.orange,
-          ),
+          style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
           child: Text('Ir para a tela 2'),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return Tela2();
+                },
+              ),
+            );
+          },
         ),
       ),
     );
